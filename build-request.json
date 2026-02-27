@@ -1,0 +1,139 @@
+{
+  "kind": "build_request",
+  "title": "Construction Business App — Initial Build",
+  "projectName": "BuildPro Manager",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a dashboard home screen that displays a summary of active projects, upcoming tasks, and key business metrics (e.g., total projects, completed projects, pending tasks).",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create an app for my construction business"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dashboard shows count of active, completed, and total projects",
+        "Upcoming tasks are listed with due dates",
+        "Metrics update when underlying data changes"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement project management: allow users to create, view, edit, and delete construction projects. Each project should have a name, description, status (Planning / In Progress / Completed), start date, end date, and budget.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create an app for my construction business"
+        ]
+      },
+      "acceptanceCriteria": [
+        "User can create a new project with all required fields",
+        "Projects are listed with their status and dates",
+        "User can edit any project field",
+        "User can delete a project",
+        "Project data persists in the backend"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement task management within each project: allow users to add, edit, complete, and delete tasks. Each task should have a title, assignee name, due date, and status (To Do / In Progress / Done).",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create an app for my construction business"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Tasks are visible inside their parent project view",
+        "User can add a task with title, assignee, due date, and status",
+        "User can mark a task as done",
+        "User can delete a task",
+        "Task data persists in the backend"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement a client directory: allow users to add, view, edit, and delete client records. Each client should have a name, phone number, email, and associated projects.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create an app for my construction business"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Client list is accessible from main navigation",
+        "User can create a client with name, phone, and email",
+        "User can associate a client with one or more projects",
+        "User can edit and delete client records"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Apply a bold, industrial visual theme inspired by construction: use a dark charcoal and warm amber/orange color palette, strong typography with clear hierarchy, card-based layouts for projects and tasks, and a persistent left sidebar navigation with icons for Dashboard, Projects, Tasks, and Clients. Enforce this style consistently across all pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create an app for my construction business"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dark charcoal background with amber/orange accent colors throughout",
+        "Sidebar navigation is visible on all pages with working links",
+        "Cards are used to display project and task summaries",
+        "Typography is bold and legible with clear visual hierarchy",
+        "Theme is consistent across Dashboard, Projects, Tasks, and Clients views"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Render the generated logo and hero banner images as static assets from frontend/public/assets/generated and display them in the app header/dashboard.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Logo appears in the sidebar or top navigation bar",
+        "Hero banner is displayed on the dashboard page",
+        "Images load from frontend/public/assets/generated"
+      ]
+    }
+  ],
+  "constraints": [
+    "All backend logic must remain in a single Motoko actor in backend/main.mo",
+    "Do not edit any files under frontend/src/hooks/ or frontend/src/components/ui",
+    "No external databases or third-party services"
+  ],
+  "nonGoals": [
+    "Real-time collaboration or WebSocket features",
+    "User authentication or Internet Identity login",
+    "Payroll or invoicing functionality",
+    "GPS or map-based features",
+    "Mobile app or native builds"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Bold construction company logo mark with a hard hat and wrench icon on a dark charcoal background with amber accent color (logo.dim_256x256.png)",
+      "Wide dashboard hero banner featuring a construction site skyline silhouette with crane, warm amber and charcoal gradient sky (hero-banner.dim_1200x300.png)"
+    ],
+    "edits": []
+  }
+}

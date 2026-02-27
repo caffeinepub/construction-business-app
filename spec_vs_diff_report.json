@@ -1,0 +1,92 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-27T00:01:41.093Z",
+  "summary": "The diff implements most of the requested requirements but has several notable gaps. The backend is missing full CRUD operations (update/delete for projects, tasks, and clients), the frontend edit/delete flows for projects and clients are incomplete or non-functional, the dedicated Tasks page/route is absent, and task editing is not supported. The sidebar is also missing a Tasks navigation item.",
+  "missing_requirements": [
+    {
+      "id": "REQ-2",
+      "requirement": "User can edit any project field (not just status); User can delete a project",
+      "reason": "The backend only exposes updateProjectStatus (not a full project update) and no deleteProject function is visible. The frontend Projects.tsx handleEdit only calls updateStatus mutation, not a full field update. No delete project functionality is present.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/pages/Projects.tsx",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "requirement": "User can edit a task; User can delete a task",
+      "reason": "TaskForm only supports creating tasks with no edit mode. No deleteTask backend function or frontend delete flow is visible. TaskItem only supports toggling done status.",
+      "evidence": [
+        "frontend/src/components/TaskForm.tsx",
+        "frontend/src/components/TaskItem.tsx",
+        "frontend/src/pages/ProjectDetail.tsx",
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "User can edit and delete client records",
+      "reason": "The Clients.tsx page explicitly states client editing is not supported and shows a toast.info instead of performing an update. No updateClient or deleteClient backend function is implemented.",
+      "evidence": [
+        "frontend/src/pages/Clients.tsx",
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-1",
+      "requirement": "Upcoming tasks are listed with due dates on the dashboard",
+      "reason": "The Dashboard shows upcoming projects by end date, not tasks with due dates. There is no task-level listing on the dashboard.",
+      "evidence": [
+        "frontend/src/pages/Dashboard.tsx"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Persistent left sidebar navigation with icons for Dashboard, Projects, Tasks, and Clients",
+      "reason": "The Sidebar only has three nav items: Dashboard, Projects, and Clients. A dedicated Tasks navigation item and route are missing entirely.",
+      "evidence": [
+        "frontend/src/components/Sidebar.tsx",
+        "frontend/src/App.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "A footer with a caffeine.ai branding link is added to the Layout component",
+      "reason": "No such footer or external branding link was requested in the build specification.",
+      "evidence": [
+        "frontend/src/components/Layout.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.82,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/ClientCard.tsx",
+    "frontend/src/components/ClientForm.tsx",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/components/ProjectCard.tsx",
+    "frontend/src/components/ProjectForm.tsx",
+    "frontend/src/components/Sidebar.tsx",
+    "frontend/src/components/TaskForm.tsx",
+    "frontend/src/components/TaskItem.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/Clients.tsx",
+    "frontend/src/pages/Dashboard.tsx",
+    "frontend/src/pages/ProjectDetail.tsx",
+    "frontend/src/pages/Projects.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-dashboard-home-screen-that-displays-a-summary-of-active-projects-upcoming-tasks-and-key-business-metrics-e-g-total-projects-completed-projects-pending-tasks",
+      "featureTitle": "Create a dashboard home screen that displays a summary of active projects, upcoming tasks, and key business metrics (e.g., total projects, completed projects, pending tasks).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/Dashboard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-project-management-allow-users-to-create-view-edit-and-delete-construction-projects-each-project-should-have-a-name-description-status-planning-in-progress-completed-start-date-end-date-and-budget",
+      "featureTitle": "Implement project management: allow users to create, view, edit, and delete construction projects. Each project should have a name, description, status (Planning / In Progress / Completed), start date, end date, and budget.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ProjectCard.tsx",
+        "frontend/src/components/ProjectForm.tsx",
+        "frontend/src/pages/Projects.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-task-management-within-each-project-allow-users-to-add-edit-complete-and-delete-tasks-each-task-should-have-a-title-assignee-name-due-date-and-status-to-do-in-progress-done",
+      "featureTitle": "Implement task management within each project: allow users to add, edit, complete, and delete tasks. Each task should have a title, assignee name, due date, and status (To Do / In Progress / Done).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/TaskForm.tsx",
+        "frontend/src/components/TaskItem.tsx",
+        "frontend/src/pages/ProjectDetail.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-client-directory-allow-users-to-add-view-edit-and-delete-client-records-each-client-should-have-a-name-phone-number-email-and-associated-projects",
+      "featureTitle": "Implement a client directory: allow users to add, view, edit, and delete client records. Each client should have a name, phone number, email, and associated projects.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ClientCard.tsx",
+        "frontend/src/components/ClientForm.tsx",
+        "frontend/src/pages/Clients.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-bold-industrial-visual-theme-inspired-by-construction-use-a-dark-charcoal-and-warm-amber-orange-color-palette-strong-typography-with-clear-hierarchy-card-based-layouts-for-projects-and-tasks-and-a-persistent-left-sidebar-navigation-with-icons-for-dashboard-projects-tasks-and-clients-enforce-this-style-consistently-across-all-pages",
+      "featureTitle": "Apply a bold, industrial visual theme inspired by construction: use a dark charcoal and warm amber/orange color palette, strong typography with clear hierarchy, card-based layouts for projects and tasks, and a persistent left sidebar navigation with icons for Dashboard, Projects, Tasks, and Clients. Enforce this style consistently across all pages.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/components/Sidebar.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-the-generated-logo-and-hero-banner-images-as-static-assets-from-frontend-public-assets-generated-and-display-them-in-the-app-header-dashboard",
+      "featureTitle": "Render the generated logo and hero banner images as static assets from frontend/public/assets/generated and display them in the app header/dashboard.",
+      "files": [
+        "frontend/src/components/Sidebar.tsx",
+        "frontend/src/pages/Dashboard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

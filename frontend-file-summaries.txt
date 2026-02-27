@@ -1,0 +1,18 @@
+{
+  "frontend/src/index.css": "Global styles with industrial dark theme using OKLCH color tokens — dark charcoal background, warm amber primary accent, Barlow/Barlow Condensed fonts, and utility classes for card and glow effects.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending the theme with Barlow font families, industrial color tokens, custom box shadows, and animation keyframes.",
+  "frontend/src/hooks/useQueries.ts": "All React Query hooks for backend operations — projects (get all, get one, create, update status), tasks (get one, get by project, create, update status), and clients (get all, get one, create).",
+  "frontend/src/App.tsx": "Main app entry with TanStack Router setup — defines routes for Dashboard (/), Projects (/projects), ProjectDetail (/projects/$id), and Clients (/clients), all wrapped in the Layout component via root route.",
+  "frontend/src/components/Layout.tsx": "Shell layout component wrapping all pages with the persistent Sidebar on the left, main content area on the right, and a branded footer with caffeine.ai attribution.",
+  "frontend/src/components/Sidebar.tsx": "Fixed left sidebar with BuildPro logo, navigation links (Dashboard, Projects, Clients) with active state highlighting using amber primary color, and a bottom branding strip.",
+  "frontend/src/components/ProjectCard.tsx": "Card component displaying a project's name, status badge, client, dates, budget, and action buttons (View Tasks, Edit) with industrial styling and hover effects.",
+  "frontend/src/components/ProjectForm.tsx": "Controlled form for creating/editing projects with fields for name, description, status, client, start/end dates, and budget using shadcn/ui components.",
+  "frontend/src/components/TaskForm.tsx": "Compact form for adding tasks with title, assignee, due date, and status fields using shadcn/ui Input and Select components.",
+  "frontend/src/components/TaskItem.tsx": "Task row component showing title, assignee, due date, status badge, and a click-to-toggle done button with loading state support.",
+  "frontend/src/components/ClientCard.tsx": "Card component displaying client name, avatar initial, contact info (email/phone), associated project list, and an edit button.",
+  "frontend/src/components/ClientForm.tsx": "Controlled form for creating/editing clients with name, phone, and email fields.",
+  "frontend/src/pages/Dashboard.tsx": "Dashboard home page with hero banner image, four metric stat cards (total/active/completed projects, clients), active projects list, recent clients list, and a project status progress bar overview.",
+  "frontend/src/pages/Projects.tsx": "Projects listing page with status filter tabs, a grid of ProjectCards, and dialogs for creating new projects and editing existing project status.",
+  "frontend/src/pages/ProjectDetail.tsx": "Project detail page showing full project info header and a task list grouped by status (To Do / In Progress / Done) with add task dialog and inline status toggle.",
+  "frontend/src/pages/Clients.tsx": "Clients directory page with a grid of ClientCards and dialogs for adding new clients and viewing/editing existing ones."
+}

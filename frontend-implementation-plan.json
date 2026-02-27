@@ -1,0 +1,185 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Construction Business App — Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create a dashboard home screen displaying active projects summary, upcoming tasks, and key business metrics",
+      "acceptanceCriteria": [
+        "Dashboard shows count of active, completed, and total projects",
+        "Upcoming tasks are listed with due dates",
+        "Metrics update when underlying data changes"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Dashboard.tsx",
+          "operation": "create",
+          "description": "Create Dashboard page that fetches all projects and tasks from backend, computes metrics (total, active, completed project counts), displays upcoming tasks sorted by due date, and renders summary cards with the industrial theme"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for Dashboard at root path '/' and wire it into the router"
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement project management with create, view, edit, and delete operations for construction projects",
+      "acceptanceCriteria": [
+        "User can create a new project with all required fields",
+        "Projects are listed with their status and dates",
+        "User can edit any project field",
+        "User can delete a project",
+        "Project data persists in the backend"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Projects.tsx",
+          "operation": "create",
+          "description": "Create Projects page that lists all projects in cards, displays name, status, dates, and budget, includes a button to open create dialog, and shows edit/delete actions per project card"
+        },
+        {
+          "path": "frontend/src/components/ProjectForm.tsx",
+          "operation": "create",
+          "description": "Create reusable ProjectForm component with controlled inputs for name, description, status (dropdown: Planning/In Progress/Completed), start date, end date, budget, and client selection dropdown. Use shadcn/ui form components (Input, Select, Textarea, Button). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/ProjectCard.tsx",
+          "operation": "create",
+          "description": "Create ProjectCard component displaying project name, status badge, dates, budget, and action buttons (Edit, Delete). Apply card styling consistent with industrial theme. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route '/projects' for Projects page and wire it into the router"
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Implement task management within each project with add, edit, complete, and delete operations",
+      "acceptanceCriteria": [
+        "Tasks are visible inside their parent project view",
+        "User can add a task with title, assignee, due date, and status",
+        "User can mark a task as done",
+        "User can delete a task",
+        "Task data persists in the backend"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ProjectDetail.tsx",
+          "operation": "create",
+          "description": "Create ProjectDetail page that displays a single project's details and lists all its tasks. Fetch project by ID from route params, fetch tasks by task IDs from project, show add task button, and render task list with status toggle and delete actions"
+        },
+        {
+          "path": "frontend/src/components/TaskForm.tsx",
+          "operation": "create",
+          "description": "Create TaskForm component with inputs for title, assignee name, due date picker, and status dropdown (To Do/In Progress/Done). Use shadcn/ui form components. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/TaskItem.tsx",
+          "operation": "create",
+          "description": "Create TaskItem component to display task title, assignee, due date, status badge, with buttons to toggle status to done and delete. Style with industrial theme. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route '/projects/:id' for ProjectDetail page and wire it into the router"
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Implement a client directory with add, view, edit, and delete operations for client records",
+      "acceptanceCriteria": [
+        "Client list is accessible from main navigation",
+        "User can create a client with name, phone, and email",
+        "User can associate a client with one or more projects",
+        "User can edit and delete client records"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Clients.tsx",
+          "operation": "create",
+          "description": "Create Clients page listing all clients in cards with name, phone, email, associated project count, and edit/delete actions. Include button to open create client dialog"
+        },
+        {
+          "path": "frontend/src/components/ClientForm.tsx",
+          "operation": "create",
+          "description": "Create ClientForm component with inputs for name, phone, email, and multi-select for associated projects (fetch all projects for dropdown). Use shadcn/ui form components. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/ClientCard.tsx",
+          "operation": "create",
+          "description": "Create ClientCard component displaying client name, contact info, project count, with edit and delete buttons. Style with industrial theme. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route '/clients' for Clients page and wire it into the router"
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Apply bold, industrial visual theme with dark charcoal and warm amber color palette, strong typography, card layouts, and persistent left sidebar navigation",
+      "acceptanceCriteria": [
+        "Dark charcoal background with amber/orange accent colors throughout",
+        "Sidebar navigation is visible on all pages with working links",
+        "Cards are used to display project and task summaries",
+        "Typography is bold and legible with clear visual hierarchy",
+        "Theme is consistent across Dashboard, Projects, Tasks, and Clients views"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define CSS custom properties for dark charcoal background (#1a1a1a or similar), warm amber/orange accent (#f59e0b or similar), and bold typography. Set base body background, text colors, and global heading styles"
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom colors for charcoal (background) and amber (accent), set default font to a bold sans-serif stack, and configure card border and shadow utilities for industrial look"
+        },
+        {
+          "path": "frontend/src/components/Sidebar.tsx",
+          "operation": "create",
+          "description": "Create Sidebar component with fixed left positioning, dark charcoal background, amber hover effects, and navigation links with icons for Dashboard (/), Projects (/projects), and Clients (/clients). Use React Router NavLink for active state styling. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create Layout component that wraps all pages with Sidebar on the left and main content area on the right. Apply consistent padding and background. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap all route content inside the Layout component so Sidebar persists across all pages"
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Render generated logo and hero banner images as static assets in the app header and dashboard",
+      "acceptanceCriteria": [
+        "Logo appears in the sidebar or top navigation bar",
+        "Hero banner is displayed on the dashboard page",
+        "Images load from frontend/public/assets/generated"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Sidebar.tsx",
+          "operation": "modify",
+          "description": "Add an img element at the top of the Sidebar displaying the logo from frontend/public/assets/generated/logo.dim_256x256.png with alt text 'BuildPro Manager Logo'"
+        },
+        {
+          "path": "frontend/src/pages/Dashboard.tsx",
+          "operation": "modify",
+          "description": "Add an img element at the top of the Dashboard page displaying the hero banner from frontend/public/assets/generated/hero-banner.dim_1200x300.png with alt text 'Construction site banner' and full-width styling"
+        }
+      ]
+    }
+  ]
+}

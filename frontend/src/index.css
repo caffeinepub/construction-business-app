@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Barlow+Condensed:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.375rem;
+
+    /* Industrial Dark Theme */
+    --background: 0.18 0.005 240;
+    --foreground: 0.93 0.01 80;
+
+    --card: 0.22 0.006 240;
+    --card-foreground: 0.93 0.01 80;
+
+    --popover: 0.24 0.006 240;
+    --popover-foreground: 0.93 0.01 80;
+
+    /* Amber/Orange accent as primary */
+    --primary: 0.72 0.18 55;
+    --primary-foreground: 0.12 0.005 240;
+
+    --secondary: 0.28 0.008 240;
+    --secondary-foreground: 0.85 0.01 80;
+
+    --muted: 0.26 0.007 240;
+    --muted-foreground: 0.58 0.01 240;
+
+    --accent: 0.72 0.18 55;
+    --accent-foreground: 0.12 0.005 240;
+
+    --destructive: 0.58 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.32 0.008 240;
+    --input: 0.28 0.008 240;
+    --ring: 0.72 0.18 55;
+
+    --chart-1: 0.72 0.18 55;
+    --chart-2: 0.65 0.15 200;
+    --chart-3: 0.55 0.18 145;
+    --chart-4: 0.68 0.16 300;
+    --chart-5: 0.60 0.20 25;
+
+    --sidebar: 0.15 0.005 240;
+    --sidebar-foreground: 0.93 0.01 80;
+    --sidebar-primary: 0.72 0.18 55;
+    --sidebar-primary-foreground: 0.12 0.005 240;
+    --sidebar-accent: 0.22 0.006 240;
+    --sidebar-accent-foreground: 0.93 0.01 80;
+    --sidebar-border: 0.28 0.008 240;
+    --sidebar-ring: 0.72 0.18 55;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Barlow', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .amber-glow {
+    box-shadow: 0 0 20px oklch(0.72 0.18 55 / 0.25);
+  }
+  .card-industrial {
+    background: oklch(var(--card));
+    border: 1px solid oklch(var(--border));
+    border-left: 3px solid oklch(var(--primary));
+  }
+}
